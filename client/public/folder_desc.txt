@@ -1,0 +1,1 @@
+In diesem Ordner werden alle Assets wie Bilder, Logos, etc. abegelegt, damit diese einfacher in der Applikation geladen werden können.
