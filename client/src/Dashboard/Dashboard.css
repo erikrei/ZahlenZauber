@@ -2,20 +2,35 @@
     --sidebar-padding: .5rem 1rem;
     --sidebar-section-gap: .5rem;
     --sidebar-section-padding: .5rem;
+
+    --main-padding: .5rem;
 }
 
-aside {
-    display: inline-flex;
-    flex-direction: column;
-    gap: var(--sidebar-section-gap);
-    padding: var(--sidebar-padding);
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+.dashboard-container {
+    display: flex;
 
-    > a {
-        background-color: var(--secondary-color);
-        color: var(--primary-color);
-        padding: var(--sidebar-section-padding);
-        text-decoration: none;
+    > aside {
+        display: inline-flex;
+        flex-direction: column;
+        gap: var(--sidebar-section-gap);
+        padding: var(--sidebar-padding);
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+    
+        > a {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: var(--sidebar-section-padding);
+            text-decoration: none;
+
+            &.active {
+                font-weight: bold;
+            }
+        }
+    }
+
+    > main {
+        padding: var(--main-padding);
     }
 }
+

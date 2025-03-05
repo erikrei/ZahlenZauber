@@ -1,21 +1,24 @@
-import './Dashboard.css';
-import { NavLink } from 'react-router';
+import "./Dashboard.css";
+import { NavLink, Outlet } from "react-router";
 
-import { sidebarSections } from '../data/dashboard.data';
+import { dashboardSectionData } from "../data/dashboard.data";
 
 export default function Dashboard() {
   return (
-    <DashboardSidebar />
+    <div className="dashboard-container">
+      <DashboardSidebar />
+      <main>
+        <Outlet />
+      </main>
+    </div>
   );
 }
 
 function DashboardSidebar() {
   return (
     <aside>
-      {sidebarSections.map((section) => (
-        <NavLink to="">
-          {section}
-        </NavLink>
+      {dashboardSectionData.map(({ section, urlPath }) => (
+        <NavLink to={urlPath}>{section}</NavLink>
       ))}
     </aside>
   );
