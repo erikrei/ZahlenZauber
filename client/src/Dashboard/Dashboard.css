@@ -4,6 +4,9 @@
     --sidebar-section-padding: .5rem;
 
     --main-padding: .5rem;
+    --main-gap: .5rem;
+
+    --learning-section-gap: 1rem;
 }
 
 .dashboard-container {
@@ -30,7 +33,21 @@
     }
 
     > main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--main-gap);
         padding: var(--main-padding);
     }
 }
 
+div.learning-section-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--learning-section-gap);
+
+    > section {
+        padding: 4rem;
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+    }
+}

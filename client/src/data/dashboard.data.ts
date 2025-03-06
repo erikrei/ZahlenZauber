@@ -26,3 +26,10 @@ export const dashboardSectionData: DashboardContent[] = [
         urlPath: "einstellungen"
     }
 ]
+
+export const dashboardLernenSections: string[] = [
+    "Addition",
+    "Subtraktion",
+    "Multiplikation",
+    "Division"
+]
