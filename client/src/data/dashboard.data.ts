@@ -4,6 +4,11 @@ export type DashboardContent = {
     urlPath: string
 }
 
+export type DashboardLernenCategory = {
+    category: string,
+    urlPath: string
+}
+
 export const dashboardSectionData: DashboardContent[] = [
     {
         section: "Lernen",
@@ -27,9 +32,21 @@ export const dashboardSectionData: DashboardContent[] = [
     }
 ]
 
-export const dashboardLernenSections: string[] = [
-    "Addition",
-    "Subtraktion",
-    "Multiplikation",
-    "Division"
+export const dashboardLernenSections: DashboardLernenCategory[] = [
+    {
+        category: "Addition",
+        urlPath: ""
+    },
+    {
+        category: "Subtraktion",
+        urlPath: ""
+    },
+    {
+        category: "Multiplikation",
+        urlPath: ""
+    },
+    {
+        category: "Division",
+        urlPath: ""
+    }    
 ]

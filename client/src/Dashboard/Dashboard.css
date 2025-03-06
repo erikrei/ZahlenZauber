@@ -7,6 +7,10 @@
     --main-gap: .5rem;
 
     --learning-section-gap: 1rem;
+    --learning-section-category-padding: 1rem 2rem;
+    --learning-section-category-header-margin-bottom: 1rem;
+    --learning-section-category-link-border-size: 1px;
+    --learning-section-category-link-border-color: var(--secondary-color);
 }
 
 .dashboard-container {
@@ -24,7 +28,6 @@
             background-color: var(--secondary-color);
             color: var(--primary-color);
             padding: var(--sidebar-section-padding);
-            text-decoration: none;
 
             &.active {
                 font-weight: bold;
@@ -45,9 +48,24 @@ div.learning-section-container {
     flex-wrap: wrap;
     gap: var(--learning-section-gap);
 
-    > section {
-        padding: 4rem;
+    > section.learning-section-category {
+        display: flex;
+        flex-direction: column;
+        padding: var(--learning-section-category-padding);
         background-color: var(--primary-color);
         color: var(--secondary-color);
+
+        > h3 {
+            margin-bottom: var(--learning-section-category-header-margin-bottom);
+        }
+
+        > a {
+            border: 
+                var(--learning-section-category-link-border-size)
+                solid
+                var(--learning-section-category-link-border-color);
+            color: var(--secondary-color);
+            padding: .5rem;
+        }
     }
 }

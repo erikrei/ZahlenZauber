@@ -8,3 +8,7 @@
     --secondary-color: #fca311;
     --accent-color: #e5e5e5;
 }
+
+a {
+    text-decoration: none;
+}
