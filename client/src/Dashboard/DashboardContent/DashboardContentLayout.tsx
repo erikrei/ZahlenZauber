@@ -1,30 +1,31 @@
 import { Navigate, useParams } from "react-router";
 
-import { dashboardSectionData } from "../../data/dashboard.data";
+import { dashboardCategoriesData } from "../../data/dashboard.data";
 import DashboardLernen from "./DashboardLernen";
 import { JSX } from "react";
 
 export default function DashboardContentLayout() {
-  const { section } = useParams();
-  const currentSection = dashboardSectionData.find(
-    (data) => data.urlPath === section
+  const { category } = useParams();
+  const currentCategory = dashboardCategoriesData.find(
+    (_category) => _category.url === category
   );
 
-  if (!currentSection) return <Navigate to="/dashboard" />;
+  if (!currentCategory) return <Navigate to="/dashboard" />;
 
-  let content: JSX.Element | null
+  let content: JSX.Element | null;
 
-  switch(currentSection.section) {
-    case 'Lernen': 
-      content = <DashboardLernen />
-      break;
-    default: content = null
+  switch (currentCategory.category) {
+    // case "Lernen":
+    //   content = <DashboardLernen />;
+    //   break;
+    default:
+      content = null;
   }
 
   return (
     <>
-      <h1>{currentSection.section}</h1>
-      <p>{currentSection.description}</p>
+      <h1>{currentCategory.category}</h1>
+      <p>{currentCategory.description}</p>
       {content}
     </>
   );

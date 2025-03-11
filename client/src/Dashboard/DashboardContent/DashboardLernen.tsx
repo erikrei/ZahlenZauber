@@ -5,9 +5,9 @@ export default function DashboardLernen() {
   return (
     <div className="learning-section-container">
       {dashboardLernenSections.map((section) => (
-        <section className="learning-section-category">
+        <section className="learning-section-category" key={section.category}>
             <h3>{section.category}</h3>
-            <NavLink to={section.urlPath} >Zum Lernbereich</NavLink>
+            <NavLink to={section.urlPath}>Zum Lernbereich</NavLink>
         </section>
       ))}
     </div>
