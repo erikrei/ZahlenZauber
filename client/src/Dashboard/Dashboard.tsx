@@ -7,9 +7,7 @@ export default function Dashboard() {
   return (
     <div className="dashboard-container">
       <DashboardSidebar />
-      <main>
-        <Outlet />
-      </main>
+      <Outlet />
     </div>
   );
 }
