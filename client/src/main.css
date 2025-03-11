@@ -15,13 +15,20 @@
     --accent-color-85: hsl(250, 10%, 85%);
     --accent-color-75: hsl(250, 10%, 75%);
     --accent-color-55: hsl(250, 10%, 55%);
-    --main-red: #b9314f;
+    --accent-color-35: hsl(250, 10%, 35%);
 
+    --main-red: #b9314f;
+    --main-blue: hsl(250, 100%, 70%);
+
+    --main-padding-sm: 0.25rem;
     --main-padding: 0.5rem;
-    --main-gap-sm: .25rem;
+    --main-padding-lg: 1rem;
+    --main-gap-sm: 0.25rem;
     --main-gap: 0.5rem;
+    --main-gap-lg: 1rem;
     --main-border-width: 1px;
     --main-border-radius: 0.25rem;
+    --main-border-radius-circle: 100%;
     --main-font-size-sm: 0.875rem;
     --main-font-size-lg: 1.125rem;
     --main-letter-spacing: 1px;

@@ -1,23 +1,29 @@
 :root {
     --article-header-font-weight: 600;
-
-    --completed-exercises-to-exerises-button-padding: 0.5rem 1rem;
-
-    --table-width: 100%;
-    --table-head-font-weight: 500;
-    --table-data-border-color: var(--accent-color-75);
-    --table-data-exercise-padding: 0.25rem 0.5rem;
-    --table-data-completed-font-weight: 300;
-    --table-data-score-padding: 0.25rem 0.5rem;
+    --article-header-padding: var(--main-padding-lg) var(--main-padding);
 }
 
-article {
-    &.completed-exercises {
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: var(--main-gap-lg);
+
+    article.completed-exercises {
+        --completed-exercises-to-exerises-button-padding: 0.5rem 1rem;
+        --table-width: 100%;
+        --table-head-font-weight: 400;
+        --table-head-background-color: var(--accent-color-95);
+        --table-data-border-color: var(--accent-color-75);
+        --table-data-exercise-padding: 0.25rem 0.5rem;
+        --table-data-completed-font-weight: 300;
+        --table-data-score-padding: 0.25rem 0.5rem;
+
         > div.completed-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: var(--main-padding);
+            padding: var(--article-header-padding);
 
             > h3 {
                 color: var(--secondary-color);
@@ -47,6 +53,7 @@ article {
             th {
                 color: var(--accent-color-55);
                 font-weight: var(--table-head-font-weight);
+                background-color: var(--table-head-background-color);
                 border-left: none;
             }
 
@@ -96,6 +103,152 @@ article {
 
                 &:first-of-type {
                     border-left: none;
+                }
+            }
+        }
+    }
+
+    article.level {
+        --level-size: 2rem;
+        --level-experience-collected-padding: var(--main-padding-sm) var(--main-padding);
+        --level-experience-collected-font-weight: 400;
+        --progress-bar-border-radius: 0.185rem;
+        --progress-bar-height: 1.5rem;
+        --progress-bar-border-color: var(--accent-color-75);
+        --progress-bar-not-reached-background-color: var(--accent-color-95);
+        --progress-bar-fill-height: 100%;
+        --experience-toggle-size: 1.25rem;
+        --experience-amount-font-weight: 400;
+        --experience-exercise-font-weight: 500;
+
+        > div.level-header {
+            display: flex;
+            align-items: center;
+            gap: var(--main-gap);
+            padding: var(--main-padding);
+
+            > h3 {
+                color: var(--secondary-color);
+                font-weight: var(--article-header-font-weight);
+            }
+
+            > p {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: var(--level-size);
+                height: var(--level-size);
+                background-color: var(--primary-color);
+                color: white;
+                border-radius: var(--main-border-radius-circle);
+            }
+        }
+
+        div.level-information-container {
+            display: flex;
+            gap: var(--main-gap-lg);
+            padding: var(--main-padding);
+
+            > div.level-progress {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                padding: var(--main-padding);
+                gap: var(--main-gap-sm);
+                border: var(--main-border-width) solid var(--accent-color-75);
+                border-radius: var(--main-border-radius);
+                align-self: flex-start;
+
+                > p {
+                    color: var(--secondary-color);
+                    font-weight: var(--level-experience-collected-font-weight);
+
+                    &.level-needed-experience {
+                        display: flex;
+                        align-items: center;
+                        gap: var(--main-gap);
+                        align-self: center;
+
+                        > span.level-experience-collected {
+                            background-color: var(--primary-color);
+                            color: white;
+                            padding: var(--level-experience-collected-padding);
+                            border-radius: var(--main-border-radius);
+                        }
+                    }
+                }
+
+                > div.progress-container {
+                    border-radius: var(--main-border-radius);
+                    height: var(--progress-bar-height);
+                    border: var(--main-border-width) solid var(--progress-bar-border-color);
+                    background-color: var(--progress-bar-not-reached-background-color);
+
+                    > div.progress-fill {
+                        display: flex;
+                        align-items: center;
+                        height: var(--progress-bar-fill-height);
+                        background-color: var(--primary-color);
+                        border-radius: var(--progress-bar-border-radius);
+                    }
+                }
+            }
+
+            > div.level-experiences {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                gap: var(--main-gap);
+                padding: var(--main-padding);
+
+                border: var(--main-border-width) solid var(--accent-color-75);
+                border-radius: var(--main-border-radius);
+
+                > div.level-experiences-header {
+                    display: flex;
+                    align-items: center;
+                    gap: var(--main-gap-sm);
+
+                    > p {
+                        color: var(--secondary-color);
+                        font-weight: var(--level-experience-collected-font-weight);
+                    }
+
+                    > svg {
+                        color: var(--accent-color-55);
+                        width: var(--experience-toggle-size);
+                        height: var(--experience-toggle-size);
+
+                        &:hover {
+                            color: var(--accent-color-35);
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                > div.level-experiences-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--main-gap);
+
+                    > div.level-experience-container {
+                        display: flex;
+                        gap: var(--main-gap);
+                        align-items: center;
+                        border-radius: var(--main-border-radius);
+
+                        > p.level-experience {
+                            background-color: var(--main-blue);
+                            border-radius: var(--main-border-radius);
+                            font-weight: var(--experience-amount-font-weight);
+                            color: white;
+                            padding: var(--main-padding-sm);
+                        }
+
+                        > p.level-experience-exercise {
+                            font-weight: var(--experience-exercise-font-weight);
+                        }
+                    }
                 }
             }
         }
