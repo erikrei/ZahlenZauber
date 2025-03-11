@@ -1,7 +1,7 @@
 import "./Dashboard.css";
-import { NavLink, Outlet } from "react-router";
+import { Outlet } from "react-router";
 
-import { dashboardSectionData } from "../data/dashboard.data";
+import DashboardSidebar from "./DashboardSidebar/DashboardSidebar";
 
 export default function Dashboard() {
   return (
@@ -14,12 +14,3 @@ export default function Dashboard() {
   );
 }
 
-function DashboardSidebar() {
-  return (
-    <aside>
-      {dashboardSectionData.map(({ section, urlPath }) => (
-        <NavLink to={urlPath}>{section}</NavLink>
-      ))}
-    </aside>
-  );
-}

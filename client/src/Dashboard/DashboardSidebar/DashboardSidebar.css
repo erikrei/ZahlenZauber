@@ -1,0 +1,146 @@
+:root {
+    --sidebar-background-color: var(--accent-color-95);
+    --sidebar-padding: 0.5rem;
+    --sidebar-height: 100vh;
+
+    --sidebar-header-background-color: var(--sidebar-background-color);
+    --sidebar-header-gap: 0.5rem;
+    --sidebar-header-border-width: 1px;
+    --sidebar-header-border-color: var(--secondary-color);
+    --sidebar-header-logo-size: 2rem;
+    --sidebar-header-logo-color: var(--primary-color);
+    --sidebar-header-folder-margin-left: 2rem;
+    --sidebar-header-folder-color: var(--accent-color-75);
+    --sidebar-header-folder-hover-color: var(--accent-color-85);
+    --sidebar-header-folder-size: 1.5rem;
+
+    --section-container-padding: 0.5rem;
+    --section-margin-bottom: 0.25rem;
+    --section-gap: 0.5rem;
+    --section-letter-spacing: 1px;
+    --section-boldness: 600;
+
+    --section-link-gap: 0.5rem;
+    --section-link-color: var(--secondary-color);
+    --section-link-padding: 0.5rem;
+    --section-link-icon-size: 1.25rem;
+    --section-link-boldness: 400;
+    --section-active-link-background-color: var(--accent-color-85);
+    --section-active-link-boldness: 600;
+    --section-active-link-border-radius: 0.5rem;
+}
+
+aside {
+    display: inline-flex;
+    flex-direction: column;
+    gap: var(--section-gap);
+    background-color: var(--sidebar-background-color);
+    color: var(--secondary-color);
+    height: var(--sidebar-height);
+
+    > .sidebar-header {
+        display: flex;
+        align-items: center;
+        padding: var(--sidebar-padding);
+        gap: var(--sidebar-header-gap);
+        border-bottom: var(--sidebar-header-border-width) solid var(--sidebar-header-border-color);
+
+        > p {
+            color: var(--sidebar-header-color);
+            font-weight: bold;
+            font-variant: small-caps;
+        }
+
+        > svg {
+            &.logo {
+                width: var(--sidebar-header-logo-size);
+                height: var(--sidebar-header-logo-size);
+                color: var(--sidebar-header-logo-color);
+            }
+
+            &.folder {
+                width: var(--sidebar-header-folder-size);
+                height: var(--sidebar-header-folder-size);
+                color: var(--sidebar-header-folder-color);
+                margin-left: var(--sidebar-header-folder-margin-left);
+
+                &:hover {
+                    cursor: pointer;
+                    color: var(--sidebar-header-folder-hover-color);
+                }
+            }
+        }
+    }
+
+    > section {
+        display: flex;
+        flex-direction: column;
+        padding: var(--section-container-padding);
+
+        > h6 {
+            text-transform: uppercase;
+            font-weight: var(--section-boldness);
+            margin-bottom: var(--section-margin-bottom);
+            letter-spacing: var(--section-letter-spacing);
+        }
+
+        > div.categories-container {
+            display: flex;
+            flex-direction: column;
+
+            > a {
+                display: flex;
+                align-items: center;
+                gap: var(--section-link-gap);
+                color: var(--section-link-color);
+                padding: var(--section-link-padding);
+                font-weight: var(--section-link-boldness);
+
+                &.active {
+                    font-weight: var(--section-active-link-boldness);
+                    background-color: var(--section-active-link-background-color);
+                    border-radius: var(--section-active-link-border-radius);
+
+                    svg {
+                        color: var(--primary-color);
+                    }
+                }
+
+                > svg {
+                    width: var(--section-link-icon-size);
+                    height: var(--section-link-icon-size);
+                }
+            }
+        }
+
+        &:last-child {
+            margin-top: auto;
+        }
+    }
+
+    &.folded {
+        p {
+            display: none;
+        }
+
+        > div.sidebar-header {
+            justify-content: space-between;
+
+            > svg.folder {
+                margin-left: 0;
+            }
+        }
+
+        > section {
+
+            > div.categories-container {
+                flex-direction: row;
+
+                > a {
+                    flex: 1;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

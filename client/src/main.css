@@ -1,12 +1,19 @@
-*, *::before, *::after {
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
     margin: 0;
 }
 
 :root {
-    --primary-color: #14213d;
-    --secondary-color: #fca311;
-    --accent-color: #e5e5e5;
+    --primary-color: #277e47;
+    --secondary-color: #1e2019;
+    --accent-color-95: hsl(250, 10%, 95%);
+    --accent-color-85: hsl(250, 10%, 85%);
+    --accent-color-75: hsl(250, 10%, 75%);
 }
 
 a {
