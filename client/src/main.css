@@ -14,6 +14,17 @@
     --accent-color-95: hsl(250, 10%, 95%);
     --accent-color-85: hsl(250, 10%, 85%);
     --accent-color-75: hsl(250, 10%, 75%);
+    --accent-color-55: hsl(250, 10%, 55%);
+    --main-red: #b9314f;
+
+    --main-padding: 0.5rem;
+    --main-gap-sm: .25rem;
+    --main-gap: 0.5rem;
+    --main-border-width: 1px;
+    --main-border-radius: 0.25rem;
+    --main-font-size-sm: 0.875rem;
+    --main-font-size-lg: 1.125rem;
+    --main-letter-spacing: 1px;
 }
 
 a {

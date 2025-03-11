@@ -5,6 +5,8 @@ import { HiOutlineUserGroup } from "react-icons/hi";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { TiMortarBoard, TiThListOutline } from "react-icons/ti";
 
+import Uebersicht from "../Dashboard/DashboardContent/Uebersicht/Uebersicht";
+
 export type DashboardSidebarSection = {
   section: string;
   categories: DashboardSidebarCategory[];
@@ -25,13 +27,13 @@ export const dashboardSectionData: DashboardSidebarSection[] = [
         category: "Lernen",
         urlPath: "lernen",
         iconElement: <TiMortarBoard />,
-        disabled: false
+        disabled: false,
       },
       {
         category: "Lektionen",
         urlPath: "lektionen",
         iconElement: <HiOutlineClipboardDocumentList />,
-        disabled: false
+        disabled: false,
       },
     ],
   },
@@ -39,16 +41,16 @@ export const dashboardSectionData: DashboardSidebarSection[] = [
     section: "Profil",
     categories: [
       {
-        category: "Fortschrittsübersicht",
-        urlPath: "fortschritt",
+        category: "Übersicht",
+        urlPath: "uebersicht",
         iconElement: <TiThListOutline />,
-        disabled: false
+        disabled: false,
       },
       {
         category: "Statistik",
         urlPath: "statistik",
         iconElement: <IoStatsChartOutline />,
-        disabled: false
+        disabled: false,
       },
     ],
   },
@@ -59,83 +61,46 @@ export const dashboardSectionData: DashboardSidebarSection[] = [
         category: "Multiplayer",
         urlPath: "multiplayer",
         iconElement: <HiOutlineUserGroup />,
-        disabled: false
+        disabled: false,
       },
       {
         category: "Einstellungen",
         urlPath: "einstellungen",
         iconElement: <IoSettingsOutline />,
-        disabled: false
+        disabled: false,
       },
     ],
   },
 ];
 
-export type DashboardContentCategory = {
-  category: string;
-  description: string;
+export type DashboardCategory = {
   url: string;
+  element: JSX.Element;
 };
 
-export const dashboardCategoriesData: DashboardContentCategory[] = [
+export const dashboardCategoriesData: DashboardCategory[] = [
   {
-    category: "Lernen",
-    description:
-      "Mathematische Grundlagen für Grundschüler umfassen Zahlenverständnis, Addition, Subtraktion, Multiplikation, Division, geometrische Formen, Maßeinheiten und einfache Muster. Spielerische Übungen und anschauliche Erklärungen fördern ein solides mathematisches Grundwissen.",
     url: "lernen",
+    element: <></>,
   },
   {
-    category: "Lektionen",
-    description:
-      "Der Bereich Lektionen bietet interaktive Mathematik-Lerneinheiten für Grundschüler. Jede Lektion enthält anschauliche Erklärungen, spielerische Übungen und adaptive Herausforderungen. Fortschritte werden gespeichert, und Belohnungen motivieren zum Lernen. Durch visuelle Darstellungen und einfache Sprache wird Mathematik verständlich vermittelt, sodass Kinder spielerisch ihre Fähigkeiten verbessern können.",
     url: "lektionen",
+    element: <></>,
   },
   {
-    category: "Fortschrittsübersicht",
-    description:
-      "Der Bereich Fortschrittsübersicht zeigt den Lernfortschritt anhand von abgeschlossenen Übungen und erreichten Zielen. Grafiken und Belohnungssysteme motivieren, während individuelle Empfehlungen helfen, gezielt Schwächen zu verbessern.",
-    url: "fortschritt",
+    url: "uebersicht",
+    element: <Uebersicht />,
   },
   {
-    category: "Statistik",
-    description:
-      "Der Bereich Statistik bietet detaillierte Einblicke in die Lernleistung durch Diagramme und Kennzahlen. Er zeigt Übungsfortschritt, Erfolgsraten und Lernzeiten, um Stärken und Verbesserungsmöglichkeiten sichtbar zu machen.",
     url: "statistik",
+    element: <></>,
   },
   {
-    category: "Multiplayer",
-    description:
-      "Der Bereich Multiplayer ermöglicht es Grundschülern, Mathematik spielerisch mit Freunden oder anderen Lernenden in Echtzeit zu üben. Durch spannende Duelle, kooperative Aufgaben und Ranglisten wird der Lernprozess motivierend gestaltet. Fairness-Mechanismen sorgen für ausgeglichene Matches, während Belohnungen und Fortschrittsanzeigen den Ehrgeiz der Kinder fördern.",
     url: "multiplayer",
+    element: <></>,
   },
   {
-    category: "Einstellungen",
-    description:
-      "Der Bereich Einstellungen ermöglicht die Anpassung der App an individuelle Bedürfnisse. Nutzer können Profile verwalten, Schwierigkeitsstufen wählen, Benachrichtigungen steuern und Designoptionen anpassen, um ein optimales Lernerlebnis zu schaffen.",
     url: "einstellungen",
-  },
-];
-
-export type DashboardLernenCategory = {
-  category: string;
-  urlPath: string;
-};
-
-export const dashboardLernenSections: DashboardLernenCategory[] = [
-  {
-    category: "Addition",
-    urlPath: "",
-  },
-  {
-    category: "Subtraktion",
-    urlPath: "",
-  },
-  {
-    category: "Multiplikation",
-    urlPath: "",
-  },
-  {
-    category: "Division",
-    urlPath: "",
+    element: <></>,
   },
 ];

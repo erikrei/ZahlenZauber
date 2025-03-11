@@ -1,12 +1,9 @@
 :root {
     --sidebar-background-color: var(--accent-color-95);
-    --sidebar-padding: 0.5rem;
+    --sidebar-border-color: var(--accent-color-75);
     --sidebar-height: 100vh;
 
-    --sidebar-header-background-color: var(--sidebar-background-color);
     --sidebar-header-gap: 0.5rem;
-    --sidebar-header-border-width: 1px;
-    --sidebar-header-border-color: var(--secondary-color);
     --sidebar-header-logo-size: 2rem;
     --sidebar-header-logo-color: var(--primary-color);
     --sidebar-header-folder-margin-left: 2rem;
@@ -14,36 +11,30 @@
     --sidebar-header-folder-hover-color: var(--accent-color-85);
     --sidebar-header-folder-size: 1.5rem;
 
-    --section-container-padding: 0.5rem;
     --section-margin-bottom: 0.25rem;
-    --section-gap: 0.5rem;
-    --section-letter-spacing: 1px;
     --section-boldness: 600;
 
-    --section-link-gap: 0.5rem;
     --section-link-color: var(--secondary-color);
-    --section-link-padding: 0.5rem;
     --section-link-icon-size: 1.25rem;
     --section-link-boldness: 400;
     --section-active-link-background-color: var(--accent-color-85);
     --section-active-link-boldness: 600;
-    --section-active-link-border-radius: 0.5rem;
 }
 
 aside {
     display: inline-flex;
     flex-direction: column;
-    gap: var(--section-gap);
+    gap: var(--main-gap);
     background-color: var(--sidebar-background-color);
     color: var(--secondary-color);
     height: var(--sidebar-height);
+    border-right: var(--main-border-width) solid var(--sidebar-border-color);
 
     > .sidebar-header {
         display: flex;
         align-items: center;
-        padding: var(--sidebar-padding);
+        padding: var(--main-padding);
         gap: var(--sidebar-header-gap);
-        border-bottom: var(--sidebar-header-border-width) solid var(--sidebar-header-border-color);
 
         > p {
             color: var(--sidebar-header-color);
@@ -75,13 +66,13 @@ aside {
     > section {
         display: flex;
         flex-direction: column;
-        padding: var(--section-container-padding);
+        padding: var(--main-padding);
 
         > h6 {
             text-transform: uppercase;
             font-weight: var(--section-boldness);
             margin-bottom: var(--section-margin-bottom);
-            letter-spacing: var(--section-letter-spacing);
+            letter-spacing: var(--main-letter-spacing);
         }
 
         > div.categories-container {
@@ -91,15 +82,15 @@ aside {
             > a {
                 display: flex;
                 align-items: center;
-                gap: var(--section-link-gap);
+                gap: var(--main-gap);
                 color: var(--section-link-color);
-                padding: var(--section-link-padding);
+                padding: var(--main-padding);
                 font-weight: var(--section-link-boldness);
 
                 &.active {
                     font-weight: var(--section-active-link-boldness);
                     background-color: var(--section-active-link-background-color);
-                    border-radius: var(--section-active-link-border-radius);
+                    border-radius: var(--main-border-radius);
 
                     svg {
                         color: var(--primary-color);
@@ -114,6 +105,7 @@ aside {
         }
 
         &:last-child {
+            border-top: var(--main-border-width) solid var(--sidebar-border-color);
             margin-top: auto;
         }
     }
@@ -132,7 +124,6 @@ aside {
         }
 
         > section {
-
             > div.categories-container {
                 flex-direction: row;
 

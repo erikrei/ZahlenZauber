@@ -1,0 +1,103 @@
+:root {
+    --article-header-font-weight: 600;
+
+    --completed-exercises-to-exerises-button-padding: 0.5rem 1rem;
+
+    --table-width: 100%;
+    --table-head-font-weight: 500;
+    --table-data-border-color: var(--accent-color-75);
+    --table-data-exercise-padding: 0.25rem 0.5rem;
+    --table-data-completed-font-weight: 300;
+    --table-data-score-padding: 0.25rem 0.5rem;
+}
+
+article {
+    &.completed-exercises {
+        > div.completed-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--main-padding);
+
+            > h3 {
+                color: var(--secondary-color);
+                font-weight: var(--article-header-font-weight);
+            }
+
+            > a {
+                background-color: var(--primary-color);
+                padding: var(--completed-exercises-to-exerises-button-padding);
+                color: white;
+                border-radius: var(--main-border-radius);
+                font-size: var(--main-font-size-sm);
+            }
+        }
+
+        > table {
+            border-collapse: collapse;
+            width: var(--table-width);
+
+            td,
+            th {
+                text-align: left;
+                padding: var(--main-padding);
+                border: var(--main-border-width) solid var(--table-data-border-color);
+            }
+
+            th {
+                color: var(--accent-color-55);
+                font-weight: var(--table-head-font-weight);
+                border-left: none;
+            }
+
+            td {
+                font-size: var(--main-font-size-lg);
+                color: var(--secondary-color);
+
+                > div.exercise-name {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    > a {
+                        display: flex;
+                        align-items: center;
+                        gap: var(--main-gap-sm);
+                        background-color: var(--secondary-color);
+                        font-size: var(--main-font-size-sm);
+                        color: white;
+                        padding: var(--table-data-exercise-padding);
+                        border-radius: var(--main-border-radius);
+                    }
+                }
+
+                &.exercise-completed {
+                    font-weight: var(--table-data-completed-font-weight);
+                }
+
+                &.exercise-score {
+                    letter-spacing: var(--main-letter-spacing);
+                    color: white;
+
+                    > p {
+                        padding: var(--table-data-score-padding);
+                        border-radius: var(--main-border-radius);
+                        text-align: center;
+
+                        &.good {
+                            background-color: var(--primary-color);
+                        }
+
+                        &.bad {
+                            background-color: var(--main-red);
+                        }
+                    }
+                }
+
+                &:first-of-type {
+                    border-left: none;
+                }
+            }
+        }
+    }
+}
