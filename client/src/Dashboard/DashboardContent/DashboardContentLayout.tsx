@@ -1,7 +1,5 @@
 import { Navigate, useParams } from "react-router";
 
-import "./DashboardContent.css";
-
 import { dashboardCategoriesData } from "../../data/dashboard.data";
 
 export default function DashboardContentLayout() {
@@ -13,5 +11,5 @@ export default function DashboardContentLayout() {
 
   if (!currentCategory) return <Navigate to="/dashboard" />;
 
-  return <main>{currentCategory.element}</main>;
+  return currentCategory.element;
 }

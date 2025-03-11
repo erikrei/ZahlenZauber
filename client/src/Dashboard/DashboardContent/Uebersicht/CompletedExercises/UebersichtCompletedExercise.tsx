@@ -2,8 +2,8 @@ import { NavLink } from "react-router";
 
 import { GoChecklist } from "react-icons/go";
 
-import { OverviewCompletedExercise } from "../../../data/uebersicht.data";
-import readableDateString from "../../../util/readableDateString";
+import { OverviewCompletedExercise } from "../../../../data/uebersicht.data";
+import readableDateString from "../../../../util/readableDateString";
 
 type OverviewCompletedExerciseProps = {
   exercise: OverviewCompletedExercise;
