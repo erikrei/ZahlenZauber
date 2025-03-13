@@ -271,12 +271,9 @@ main {
 
             > div.milestones-accomplished,
             div.milestones-unaccomplished {
-
                 &.milestones-accomplished {
                     align-self: flex-start;
                 }
-
-
 
                 > div.milestone {
                     display: flex;
@@ -325,9 +322,18 @@ main {
                             width: var(--milestone-progress-progress-size);
                             height: var(--milestone-progress-progress-size);
 
-                            > .CircularProgressbar-text {
+                            .CircularProgressbar-path {
+                                stroke: var(--main-blue);
+                            }
+
+                            .CircularProgressbar-text {
                                 font: var(--milestone-progress-font);
                                 font-family: "Inter";
+                                fill: var(--main-blue);
+                            }
+
+                            .CircularProgressbar-trail {
+                                stroke: var(--accent-color-85);
                             }
                         }
                     }
