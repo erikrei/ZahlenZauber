@@ -13,14 +13,16 @@ export default function UebersichtLevelProgress({
   const progressWidth = (experience / nextLevel) * 100;
 
   return (
-    <div className="level-progress">
+    <div className="level-progress card">
       <p>Fortschritt</p>
-      <UebersichtLevelProgressBar progressWidth={progressWidth} />
-      <UebersichtLevelProgressBarInformation
-        experience={experience}
-        nextLevel={nextLevel}
-        showText={true}
-      />
+      <div className="progress-bar-container">
+        <UebersichtLevelProgressBar progressWidth={progressWidth} />
+        <UebersichtLevelProgressBarInformation
+          experience={experience}
+          nextLevel={nextLevel}
+          showText={true}
+        />
+      </div>
     </div>
   );
 }
