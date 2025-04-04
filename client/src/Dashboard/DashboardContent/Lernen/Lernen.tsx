@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import "./Lernen.css";
 
 import {
@@ -8,19 +10,18 @@ import LernenCategory from "./LernenCategory";
 import LernenHeader from "./LernenHeader";
 
 export default function Lernen() {
-  // Derzeit nur 1. Klasse implementiert, wird später durch State geändert
-  const selectedClass = 1;
+  const [selectedClass, setSelectedClass] = useState<number>(1);
 
   const classCategories: LearningCategory[] | undefined =
     learningExercisesData.find(
       (exercises) => exercises.class === selectedClass
     )?.categories;
-
+ 
   if (!classCategories) return null;
 
   return (
-    <main className="lernen">
-      <LernenHeader />
+    <main className="learning">
+      <LernenHeader selectedClass={selectedClass} setSelectedClass={setSelectedClass} />
       <div className="learning-exercises">
         {classCategories.map((_category) => (
           <LernenCategory key={_category.name} category={_category} />
