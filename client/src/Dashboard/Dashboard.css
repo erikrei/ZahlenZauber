@@ -1,3 +1,39 @@
 .dashboard-container {
     display: flex;
+
+    main {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: var(--main-gap);
+
+        article {
+            > div[class*="header"] {
+                padding: var(--article-header-padding);
+
+                > h3 {
+                    color: var(--secondary-color);
+                    font-weight: var(--article-header-font-weight);
+                }
+            }
+
+            div[class*="card"] {
+                border-radius: var(--main-border-radius);
+                box-shadow: var(--card-box-shadow);
+
+                > div {
+                    padding: var(--main-padding);
+                }
+
+                > p {
+                    color: var(--accent-color-55);
+                    font-weight: var(--card-header-font-weight);
+                    background-color: var(--accent-color-95);
+                    padding: var(--card-header-padding);
+                    border-top-left-radius: var(--main-border-radius);
+                    border-top-right-radius: var(--main-border-radius);
+                }
+            }
+        }
+    }
 }

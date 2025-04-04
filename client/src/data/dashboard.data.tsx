@@ -6,6 +6,7 @@ import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { TiMortarBoard, TiThListOutline } from "react-icons/ti";
 
 import Uebersicht from "../Dashboard/DashboardContent/Uebersicht/Uebersicht";
+import Lernen from "../Dashboard/DashboardContent/Lernen/Lernen";
 
 export type DashboardSidebarSection = {
   section: string;
@@ -81,7 +82,7 @@ export type DashboardCategory = {
 export const dashboardCategoriesData: DashboardCategory[] = [
   {
     url: "lernen",
-    element: <></>,
+    element: <Lernen />,
   },
   {
     url: "lektionen",

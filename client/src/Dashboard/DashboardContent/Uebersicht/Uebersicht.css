@@ -7,334 +7,298 @@
     --card-box-shadow: var(--accent-color-75) 0px 1px 3px 0px, var(--accent-color-75) 0px 1px 2px 0px;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: var(--main-gap-lg);
+article.completed-exercises {
+    --completed-exercises-to-exerises-button-padding: 0.5rem 1rem;
+    --table-width: 100%;
+    --table-head-font-weight: 400;
+    --table-head-background-color: var(--accent-color-95);
+    --table-data-border-color: var(--accent-color-75);
+    --table-data-exercise-padding: 0.25rem 0.5rem;
+    --table-data-completed-font-weight: 300;
+    --table-data-score-padding: 0.25rem 0.5rem;
 
-    article {
-        > div[class*="header"] {
-            padding: var(--article-header-padding);
+    > div.completed-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-            > h3 {
-                color: var(--secondary-color);
-                font-weight: var(--article-header-font-weight);
-            }
-        }
-
-        div[class*="card"] {
+        > a {
+            background-color: var(--primary-color);
+            padding: var(--completed-exercises-to-exerises-button-padding);
+            color: white;
             border-radius: var(--main-border-radius);
-            box-shadow: var(--card-box-shadow);
-
-            > div {
-                padding: var(--main-padding);
-            }
-
-            > p {
-                color: var(--accent-color-55);
-                font-weight: var(--card-header-font-weight);
-                background-color: var(--accent-color-95);
-                padding: var(--card-header-padding);
-                border-top-left-radius: var(--main-border-radius);
-                border-top-right-radius: var(--main-border-radius);
-            }
+            font-size: var(--main-font-size-sm);
         }
     }
 
-    article.completed-exercises {
-        --completed-exercises-to-exerises-button-padding: 0.5rem 1rem;
-        --table-width: 100%;
-        --table-head-font-weight: 400;
-        --table-head-background-color: var(--accent-color-95);
-        --table-data-border-color: var(--accent-color-75);
-        --table-data-exercise-padding: 0.25rem 0.5rem;
-        --table-data-completed-font-weight: 300;
-        --table-data-score-padding: 0.25rem 0.5rem;
+    > table {
+        border-collapse: collapse;
+        width: var(--table-width);
 
-        > div.completed-header {
+        td,
+        th {
+            text-align: left;
+            padding: var(--main-padding);
+            border: var(--main-border-width) solid var(--table-data-border-color);
+        }
+
+        th {
+            color: var(--accent-color-55);
+            font-weight: var(--table-head-font-weight);
+            background-color: var(--table-head-background-color);
+            border-left: none;
+        }
+
+        td {
+            font-size: var(--main-font-size-lg);
+            color: var(--secondary-color);
+
+            > div.exercise-name {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                > a {
+                    display: flex;
+                    align-items: center;
+                    gap: var(--main-gap-sm);
+                    background-color: var(--secondary-color);
+                    font-size: var(--main-font-size-sm);
+                    color: white;
+                    padding: var(--table-data-exercise-padding);
+                    border-radius: var(--main-border-radius);
+                }
+            }
+
+            &.exercise-completed {
+                font-weight: var(--table-data-completed-font-weight);
+            }
+
+            &.exercise-score {
+                letter-spacing: var(--main-letter-spacing);
+                color: white;
+
+                > p {
+                    padding: var(--table-data-score-padding);
+                    border-radius: var(--main-border-radius);
+                    text-align: center;
+
+                    &.good {
+                        background-color: var(--primary-color);
+                    }
+
+                    &.bad {
+                        background-color: var(--main-red);
+                    }
+                }
+            }
+
+            &:first-of-type {
+                border-left: none;
+            }
+        }
+    }
+}
+
+article.level {
+    --level-size: 2rem;
+    --level-experience-collected-padding: var(--main-padding-sm) var(--main-padding);
+    --level-experience-collected-font-weight: 400;
+    --progress-color: var(--main-blue);
+    --progress-bar-border-radius: 0.185rem;
+    --progress-bar-height: 1.5rem;
+    --progress-bar-border-color: var(--accent-color-85);
+    --progress-bar-not-reached-background-color: var(--accent-color-95);
+    --progress-bar-fill-height: 100%;
+    --experience-toggle-size: 1.25rem;
+    --experience-amount-font-weight: 400;
+    --experience-exercise-font-weight: 500;
+
+    > div.level-header {
+        display: flex;
+        align-items: center;
+        gap: var(--main-gap);
+
+        > p {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            width: var(--level-size);
+            height: var(--level-size);
+            background-color: var(--progress-color);
+            color: white;
+            border-radius: var(--main-border-radius-circle);
+        }
+    }
 
-            > a {
-                background-color: var(--primary-color);
-                padding: var(--completed-exercises-to-exerises-button-padding);
-                color: white;
-                border-radius: var(--main-border-radius);
-                font-size: var(--main-font-size-sm);
+    div.level-information-container {
+        display: flex;
+        gap: var(--main-gap-lg);
+        padding: var(--main-padding);
+
+        > div {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+        }
+
+        > div.level-progress {
+            align-self: flex-start;
+
+            > div.progress-bar-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: var(--main-gap);
+
+                > div.progress-container {
+                    border-radius: var(--main-border-radius);
+                    height: var(--progress-bar-height);
+                    border: var(--main-border-width) solid var(--progress-bar-border-color);
+                    background-color: var(--progress-bar-not-reached-background-color);
+
+                    > div.progress-fill {
+                        display: flex;
+                        align-items: center;
+                        height: var(--progress-bar-fill-height);
+                        background-color: var(--progress-color);
+                        border-radius: var(--progress-bar-border-radius);
+                    }
+                }
+
+                > p.level-needed-experience {
+                    color: var(--secondary-color);
+
+                    &.level-needed-experience {
+                        display: flex;
+                        align-items: center;
+                        gap: var(--main-gap);
+                        align-self: center;
+
+                        > span.level-experience-collected {
+                            background-color: var(--progress-color);
+                            color: white;
+                            padding: var(--level-experience-collected-padding);
+                            border-radius: var(--main-border-radius);
+                        }
+                    }
+                }
             }
         }
 
-        > table {
-            border-collapse: collapse;
-            width: var(--table-width);
+        > div.level-experiences {
+            > div.level-experiences-list {
+                display: flex;
+                flex-direction: column;
+                gap: var(--main-gap);
 
-            td,
-            th {
-                text-align: left;
-                padding: var(--main-padding);
-                border: var(--main-border-width) solid var(--table-data-border-color);
-            }
-
-            th {
-                color: var(--accent-color-55);
-                font-weight: var(--table-head-font-weight);
-                background-color: var(--table-head-background-color);
-                border-left: none;
-            }
-
-            td {
-                font-size: var(--main-font-size-lg);
-                color: var(--secondary-color);
-
-                > div.exercise-name {
+                > div.level-experience-container {
                     display: flex;
-                    justify-content: space-between;
+                    gap: var(--main-gap);
                     align-items: center;
+                    border-radius: var(--main-border-radius);
 
-                    > a {
+                    > p.level-experience {
+                        background-color: var(--main-blue);
+                        border-radius: var(--main-border-radius);
+                        font-weight: var(--experience-amount-font-weight);
+                        color: white;
+                        padding: var(--main-padding-sm);
+                    }
+
+                    > p.level-experience-exercise {
+                        font-weight: var(--experience-exercise-font-weight);
+                    }
+                }
+            }
+        }
+    }
+}
+
+article.milestones {
+    --milestones-accomplished-font-weight: 400;
+    --milestone-image-size: 4rem;
+    --milestone-title-font-weight: 500;
+    --milestone-cause-font-weight: 300;
+    --milestone-progress-progress-size: 3rem;
+    --milestone-progress-font: bold 1.5rem sans-serif;
+
+    > div.milestones-container {
+        display: flex;
+        gap: var(--main-gap-lg);
+        padding: var(--main-padding);
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        > div.milestones-accomplished,
+        div.milestones-unaccomplished {
+            &.milestones-accomplished {
+                align-self: flex-start;
+            }
+
+            > div.milestone {
+                display: flex;
+                align-items: center;
+                gap: var(--main-gap);
+
+                > div.placeholder-img {
+                    width: var(--milestone-image-size);
+                    height: var(--milestone-image-size);
+                    background-color: var(--accent-color-75);
+                    border-radius: var(--main-border-radius);
+                }
+
+                > div.milestone-text-container {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: var(--main-gap);
+
+                    > div.milestone-text {
+                        display: flex;
+                        flex-direction: column;
+                        gap: var(--main-gap-sm);
+
+                        > p.milestone-title {
+                            font-weight: var(--milestone-title-font-weight);
+                        }
+
+                        > p.milestone-cause {
+                            font-weight: var(--milestone-cause-font-weight);
+                            color: var(--accent-color-35);
+                            font-size: var(--main-font-size-sm);
+                        }
+                    }
+
+                    > p {
                         display: flex;
                         align-items: center;
                         gap: var(--main-gap-sm);
-                        background-color: var(--secondary-color);
                         font-size: var(--main-font-size-sm);
-                        color: white;
-                        padding: var(--table-data-exercise-padding);
-                        border-radius: var(--main-border-radius);
-                    }
-                }
-
-                &.exercise-completed {
-                    font-weight: var(--table-data-completed-font-weight);
-                }
-
-                &.exercise-score {
-                    letter-spacing: var(--main-letter-spacing);
-                    color: white;
-
-                    > p {
-                        padding: var(--table-data-score-padding);
-                        border-radius: var(--main-border-radius);
-                        text-align: center;
-
-                        &.good {
-                            background-color: var(--primary-color);
-                        }
-
-                        &.bad {
-                            background-color: var(--main-red);
-                        }
-                    }
-                }
-
-                &:first-of-type {
-                    border-left: none;
-                }
-            }
-        }
-    }
-
-    article.level {
-        --level-size: 2rem;
-        --level-experience-collected-padding: var(--main-padding-sm) var(--main-padding);
-        --level-experience-collected-font-weight: 400;
-        --progress-color: var(--main-blue);
-        --progress-bar-border-radius: 0.185rem;
-        --progress-bar-height: 1.5rem;
-        --progress-bar-border-color: var(--accent-color-85);
-        --progress-bar-not-reached-background-color: var(--accent-color-95);
-        --progress-bar-fill-height: 100%;
-        --experience-toggle-size: 1.25rem;
-        --experience-amount-font-weight: 400;
-        --experience-exercise-font-weight: 500;
-
-        > div.level-header {
-            display: flex;
-            align-items: center;
-            gap: var(--main-gap);
-
-            > p {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: var(--level-size);
-                height: var(--level-size);
-                background-color: var(--progress-color);
-                color: white;
-                border-radius: var(--main-border-radius-circle);
-            }
-        }
-
-        div.level-information-container {
-            display: flex;
-            gap: var(--main-gap-lg);
-            padding: var(--main-padding);
-
-            > div {
-                display: flex;
-                flex: 1;
-                flex-direction: column;
-            }
-
-            > div.level-progress {
-                align-self: flex-start;
-
-                > div.progress-bar-container {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    gap: var(--main-gap);
-
-                    > div.progress-container {
-                        border-radius: var(--main-border-radius);
-                        height: var(--progress-bar-height);
-                        border: var(--main-border-width) solid var(--progress-bar-border-color);
-                        background-color: var(--progress-bar-not-reached-background-color);
-
-                        > div.progress-fill {
-                            display: flex;
-                            align-items: center;
-                            height: var(--progress-bar-fill-height);
-                            background-color: var(--progress-color);
-                            border-radius: var(--progress-bar-border-radius);
-                        }
+                        color: var(--accent-color-35);
                     }
 
-                    > p.level-needed-experience {
-                        color: var(--secondary-color);
+                    > svg {
+                        width: var(--milestone-progress-progress-size);
+                        height: var(--milestone-progress-progress-size);
 
-                        &.level-needed-experience {
-                            display: flex;
-                            align-items: center;
-                            gap: var(--main-gap);
-                            align-self: center;
-
-                            > span.level-experience-collected {
-                                background-color: var(--progress-color);
-                                color: white;
-                                padding: var(--level-experience-collected-padding);
-                                border-radius: var(--main-border-radius);
-                            }
-                        }
-                    }
-                }
-            }
-
-            > div.level-experiences {
-                > div.level-experiences-list {
-                    display: flex;
-                    flex-direction: column;
-                    gap: var(--main-gap);
-
-                    > div.level-experience-container {
-                        display: flex;
-                        gap: var(--main-gap);
-                        align-items: center;
-                        border-radius: var(--main-border-radius);
-
-                        > p.level-experience {
-                            background-color: var(--main-blue);
-                            border-radius: var(--main-border-radius);
-                            font-weight: var(--experience-amount-font-weight);
-                            color: white;
-                            padding: var(--main-padding-sm);
+                        .CircularProgressbar-path {
+                            stroke: var(--main-blue);
                         }
 
-                        > p.level-experience-exercise {
-                            font-weight: var(--experience-exercise-font-weight);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    article.milestones {
-        --milestones-accomplished-font-weight: 400;
-        --milestone-image-size: 4rem;
-        --milestone-title-font-weight: 500;
-        --milestone-cause-font-weight: 300;
-        --milestone-progress-progress-size: 3rem;
-        --milestone-progress-font: bold 1.5rem sans-serif;
-
-        > div.milestones-container {
-            display: flex;
-            gap: var(--main-gap-lg);
-            padding: var(--main-padding);
-
-            > div {
-                display: flex;
-                flex-direction: column;
-                flex: 1;
-            }
-
-            > div.milestones-accomplished,
-            div.milestones-unaccomplished {
-                &.milestones-accomplished {
-                    align-self: flex-start;
-                }
-
-                > div.milestone {
-                    display: flex;
-                    align-items: center;
-                    gap: var(--main-gap);
-
-                    > div.placeholder-img {
-                        width: var(--milestone-image-size);
-                        height: var(--milestone-image-size);
-                        background-color: var(--accent-color-75);
-                        border-radius: var(--main-border-radius);
-                    }
-
-                    > div.milestone-text-container {
-                        flex: 1;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        gap: var(--main-gap);
-
-                        > div.milestone-text {
-                            display: flex;
-                            flex-direction: column;
-                            gap: var(--main-gap-sm);
-
-                            > p.milestone-title {
-                                font-weight: var(--milestone-title-font-weight);
-                            }
-
-                            > p.milestone-cause {
-                                font-weight: var(--milestone-cause-font-weight);
-                                color: var(--accent-color-35);
-                                font-size: var(--main-font-size-sm);
-                            }
+                        .CircularProgressbar-text {
+                            font: var(--milestone-progress-font);
+                            font-family: "Inter";
+                            fill: var(--main-blue);
                         }
 
-                        > p {
-                            display: flex;
-                            align-items: center;
-                            gap: var(--main-gap-sm);
-                            font-size: var(--main-font-size-sm);
-                            color: var(--accent-color-35);
-                        }
-
-                        > svg {
-                            width: var(--milestone-progress-progress-size);
-                            height: var(--milestone-progress-progress-size);
-
-                            .CircularProgressbar-path {
-                                stroke: var(--main-blue);
-                            }
-
-                            .CircularProgressbar-text {
-                                font: var(--milestone-progress-font);
-                                font-family: "Inter";
-                                fill: var(--main-blue);
-                            }
-
-                            .CircularProgressbar-trail {
-                                stroke: var(--accent-color-85);
-                            }
+                        .CircularProgressbar-trail {
+                            stroke: var(--accent-color-85);
                         }
                     }
                 }
