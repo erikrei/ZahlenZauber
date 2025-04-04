@@ -2,20 +2,29 @@
     --header-padding: var(--main-padding) var(--main-padding) 0 var(--main-padding);
 }
 
-div.lernen-header {
-    padding: var(--header-padding);
-    color: var(--secondary-color);
+main.learning {
+    > div.learning-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--header-padding);
+        color: var(--secondary-color);
 
-    > h1 {
-        margin-bottom: var(--main-gap-sm);
+        > div.learning-header-text {
+            > h1 {
+                margin-bottom: var(--main-gap-sm);
+            }
+
+            > p {
+                font-size: var(--main-font-size-lg);
+            }
+        }
+
+        > div.class-selector {
+            padding: var(--main-padding);
+        }
     }
 
-    > p {
-        font-size: var(--main-font-size-lg);
-    }
-}
-
-main.lernen {
     > div.learning-exercises {
         display: flex;
         flex-direction: column;
