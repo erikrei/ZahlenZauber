@@ -69,7 +69,7 @@ main.learning {
                     color: var(--secondary-color);
                     width: 16rem;
                     padding: var(--main-padding-lg);
-                    background-color: var(--accent-color-85);
+                    background-color: var(--accent-color-95);
                     border-radius: var(--main-border-radius);
 
                     > p {
@@ -78,7 +78,7 @@ main.learning {
 
                     &:hover {
                         cursor: pointer;
-                        background-color: var(--accent-color-75);
+                        background-color: var(--accent-color-85);
                     }
                 }
             }
