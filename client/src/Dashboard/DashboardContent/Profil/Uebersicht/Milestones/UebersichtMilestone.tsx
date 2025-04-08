@@ -1,4 +1,4 @@
-import { OverviewMilestone } from "../../../../data/uebersicht.data";
+import { OverviewMilestone } from "../../../../../data/uebersicht.data";
 import UebersichtMilestoneAchievedDate from "./UebersichtMilestoneAchievedDate";
 import UebersichtMilestoneText from "./UebersichtMilestoneText";
 import UebersichtProgressMilestone from "./UebersichtProgressMilestone";

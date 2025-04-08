@@ -3,7 +3,7 @@ import "react-circular-progressbar/dist/styles.css";
 
 import getMilestoneProgress, {
   MilestoneProgress,
-} from "../../../../util/getMilestoneProgress";
+} from "../../../../../util/getMilestoneProgress";
 
 type UebersichtProgressMilestoneProps = {
   progressCurrent?: number;

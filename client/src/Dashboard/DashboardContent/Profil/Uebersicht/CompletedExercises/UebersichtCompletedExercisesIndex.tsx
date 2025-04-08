@@ -1,7 +1,7 @@
 import { UebersichtCompletedExercisesList } from "./UebersichtCompletedExercisesList";
 import UebersichtCompletedExerciseHeader from "./UebersichtCompletedExercisesHeader";
 
-import { overviewCompletedExercisesData } from "../../../../data/uebersicht.data";
+import { overviewCompletedExercisesData } from "../../../../../data/uebersicht.data";
 
 export default function UebersichtCompletedExercisesIndex() {
   return (

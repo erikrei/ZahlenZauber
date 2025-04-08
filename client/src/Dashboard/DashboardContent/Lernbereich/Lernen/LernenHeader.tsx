@@ -1,3 +1,4 @@
+import LernBereichHeaderText from "../LernbereichHeaderText";
 import LernenClassSelector from "./LernenClassSelector";
 
 type LernenHeaderProps = {
@@ -10,14 +11,12 @@ export default function LernenHeader({
   setSelectedClass,
 }: LernenHeaderProps) {
   return (
-    <div className="learning-header">
-      <div className="learning-header-text">
-        <h1>Lernen</h1>
-        <p>
-          In diesem Bereich werden die je nach Klasse ausgewählten Übungen
-          angezeigt, die auf Wunsch durchgeführt werden können.
-        </p>
-      </div>
+    <div className="learning-section-header">
+      <LernBereichHeaderText
+        headline="Lernen"
+        description="In diesem Bereich werden die je nach Klasse ausgewählten Übungen
+        angezeigt, die auf Wunsch durchgeführt werden können."
+      />
       <LernenClassSelector
         selectedClass={selectedClass}
         setSelectedClass={setSelectedClass}

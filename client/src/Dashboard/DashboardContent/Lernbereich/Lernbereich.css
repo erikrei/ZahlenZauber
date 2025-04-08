@@ -1,0 +1,150 @@
+:root {
+    --header-padding: var(--main-padding);
+    --header-bottom-border-color: var(--accent-color-75);
+    --lesson-card-min-width: 20rem;
+    --lesson-description-padding: var(--main-padding-lg) var(--main-padding) var(--main-padding-lg) var(--main-padding);
+}
+
+main.learning-section {
+    gap: 0;
+
+    > div.learning-section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--header-padding);
+        color: var(--secondary-color);
+        border-bottom: var(--main-border-width) solid var(--header-bottom-border-color);
+
+        > div.learning-section-header-text {
+            > h1 {
+                margin-bottom: var(--main-gap-sm);
+            }
+
+            > p {
+                font-size: var(--main-font-size-lg);
+            }
+        }
+
+        > div.class-selector {
+            padding: var(--main-padding);
+        }
+    }
+
+    > p.learning-section-not-found {
+        padding: var(--main-padding);
+    }
+
+    > div.learning-exercises-container {
+        display: flex;
+        flex-direction: column;
+        padding-block: var(--main-padding);
+        gap: var(--main-gap-lg);
+    }
+
+    article.default-learning-section-article {
+        display: flex;
+        flex-direction: column;
+        gap: var(--main-gap-lg);
+        margin-inline: var(--main-padding);
+        padding: var(--main-padding-lg);
+        border-radius: var(--main-border-radius);
+        box-shadow: var(--card-box-shadow);
+
+        > div.default-learning-section-description {
+            display: flex;
+            flex-direction: column;
+            gap: var(--main-gap-sm);
+
+            > h3 {
+                font-variant: small-caps;
+                color: var(--secondary-color);
+                letter-spacing: var(--main-letter-spacing);
+            }
+
+            > p {
+                font-size: var(--main-font-size-sm);
+                color: var(--accent-color-35);
+            }
+        }
+
+        > div.default-learning-section-exercises-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--main-gap);
+
+            > div.default-learning-section-exercise {
+                display: flex;
+                flex-direction: column;
+                gap: var(--main-gap-sm);
+                color: var(--secondary-color);
+                width: 16rem;
+                padding: var(--main-padding-lg);
+                background-color: var(--accent-color-95);
+                border-radius: var(--main-border-radius);
+
+                > p {
+                    font-size: var(--main-font-size-sm);
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: var(--accent-color-85);
+                }
+            }
+        }
+    }
+
+    > section.lessons-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--lesson-card-min-width), 1fr));
+        gap: var(--main-gap-lg);
+        padding: var(--main-padding);
+
+        > div.lesson {
+            display: flex;
+            align-self: flex-start;
+            flex-direction: column;
+            color: var(--secondary-color);
+            background-color: var(--accent-color-95);
+            border-radius: var(--main-border-radius);
+
+            &:hover {
+                cursor: pointer;
+                background-color: var(--accent-color-85);
+            }
+
+            > div.lesson-header {
+                display: flex;
+                justify-content: space-between;
+                gap: var(--main-gap);
+                align-items: center;
+                background-color: var(--accent-color-75);
+                border-top-left-radius: var(--main-border-radius);
+                border-top-right-radius: var(--main-border-radius);
+
+                > h3 {
+                    font-variant: small-caps;
+                    padding-inline: var(--main-padding);
+                }
+
+                > span {
+                    display: flex;
+                    align-items: center;
+                    align-self: stretch;
+                    vertical-align: middle;
+                    font-size: var(--main-font-size-sm);
+                    background-color: var(--accent-color-55);
+                    border-top-right-radius: var(--main-border-radius);
+                    padding: var(--main-padding);
+                    color: white;
+                    text-align: center;
+                }
+            }
+
+            > p.lesson-description {
+                padding: var(--lesson-description-padding);
+            }
+        }
+    }
+}
