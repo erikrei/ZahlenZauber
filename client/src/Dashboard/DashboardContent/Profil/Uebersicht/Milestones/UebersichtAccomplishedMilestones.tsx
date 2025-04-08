@@ -1,4 +1,4 @@
-import { OverviewMilestone } from "../../../../data/uebersicht.data";
+import { OverviewMilestone } from "../../../../../data/uebersicht.data";
 import UebersichtMilestone from "./UebersichtMilestone";
 
 type UebersichtAccomplishedMilestonesProps = {

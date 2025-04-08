@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-import "./Lernen.css";
+import "../Lernbereich.css";
 
 import {
   LearningCategory,
   learningExercisesData,
-} from "../../../data/lernen.data";
+} from "../../../../data/lernen.data";
 import LernenCategory from "./LernenCategory";
 import LernenHeader from "./LernenHeader";
 
@@ -20,9 +20,9 @@ export default function Lernen() {
   if (!classCategories) return null;
 
   return (
-    <main className="learning">
+    <main className="learning-section">
       <LernenHeader selectedClass={selectedClass} setSelectedClass={setSelectedClass} />
-      <div className="learning-exercises">
+      <div className="learning-exercises-container">
         {classCategories.map((_category) => (
           <LernenCategory key={_category.name} category={_category} />
         ))}

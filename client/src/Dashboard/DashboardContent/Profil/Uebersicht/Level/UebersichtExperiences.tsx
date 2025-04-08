@@ -1,4 +1,4 @@
-import { OverviewExperienceExercise } from "../../../../data/uebersicht.data";
+import { OverviewExperienceExercise } from "../../../../../data/uebersicht.data";
 import UebersichtExperience from "./UebersichtExperience";
 
 type UebersichtExeperiencesProps = {

@@ -5,8 +5,9 @@ import { HiOutlineUserGroup } from "react-icons/hi";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { TiMortarBoard, TiThListOutline } from "react-icons/ti";
 
-import Uebersicht from "../Dashboard/DashboardContent/Uebersicht/Uebersicht";
-import Lernen from "../Dashboard/DashboardContent/Lernen/Lernen";
+import Uebersicht from "../Dashboard/DashboardContent/Profil/Uebersicht/Uebersicht";
+import Lernen from "../Dashboard/DashboardContent/Lernbereich/Lernen/Lernen";
+import Lektionen from "../Dashboard/DashboardContent/Lernbereich/Lektionen/Lektionen";
 
 export type DashboardSidebarSection = {
   section: string;
@@ -86,7 +87,7 @@ export const dashboardCategoriesData: DashboardCategory[] = [
   },
   {
     url: "lektionen",
-    element: <></>,
+    element: <Lektionen />,
   },
   {
     url: "uebersicht",

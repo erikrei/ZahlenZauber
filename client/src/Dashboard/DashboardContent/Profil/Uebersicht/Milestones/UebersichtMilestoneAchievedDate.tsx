@@ -1,5 +1,5 @@
 import { LuCalendarCheck } from "react-icons/lu";
-import readableDateString from "../../../../util/readableDateString";
+import readableDateString from "../../../../../util/readableDateString";
 
 type UebersichtMilestoneAchievedDateProps = {
   achievedDate?: Date;

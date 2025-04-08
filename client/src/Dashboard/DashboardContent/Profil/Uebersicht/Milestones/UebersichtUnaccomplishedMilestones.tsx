@@ -1,5 +1,5 @@
-import { OverviewMilestone } from "../../../../data/uebersicht.data";
-import randomItemsFromArray from "../../../../util/randomItemsFromArray";
+import { OverviewMilestone } from "../../../../../data/uebersicht.data";
+import randomItemsFromArray from "../../../../../util/randomItemsFromArray";
 import UebersichtMilestone from "./UebersichtMilestone";
 
 type UebersichtUnaccomplishedMilestonesProps = {

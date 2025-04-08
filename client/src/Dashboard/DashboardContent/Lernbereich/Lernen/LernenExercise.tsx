@@ -1,4 +1,4 @@
-import { LearningCategoryExercise } from "../../../data/lernen.data";
+import { LearningCategoryExercise } from "../../../../data/lernen.data";
 
 type LernenExerciseProps = {
   exercise: LearningCategoryExercise;
@@ -6,7 +6,7 @@ type LernenExerciseProps = {
 
 export default function LernenExercise({ exercise }: LernenExerciseProps) {
   return (
-    <div className="exercise">
+    <div className="default-learning-section-exercise">
       <h4>{exercise.name}</h4>
       <p>{exercise.description}</p>
     </div>
