@@ -1,3 +1,5 @@
+import LernbereichHeaderClass from "./LernbereichHeaderClass";
+
 type LernBereichHeaderTextProps = {
   headline: string;
   description: string;
@@ -13,6 +15,7 @@ export default function LernBereichHeaderText({
         <h1>{headline}</h1>
         <p>{description}</p>
       </div>
+      <LernbereichHeaderClass />
     </div>
   );
 }
