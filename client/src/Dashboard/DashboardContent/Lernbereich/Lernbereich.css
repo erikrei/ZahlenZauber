@@ -1,6 +1,8 @@
 :root {
     --header-padding: var(--main-padding);
     --header-bottom-border-color: var(--accent-color-75);
+    --header-selected-class-padding: var(--main-padding) var(--main-padding-lg);
+    --header-selected-class-margin: 0rem 1rem;
     --lesson-card-min-width: 20rem;
     --lesson-description-padding: var(--main-padding-lg) var(--main-padding) var(--main-padding-lg) var(--main-padding);
 }
@@ -26,8 +28,13 @@ main.learning-section {
             }
         }
 
-        > div.class-selector {
-            padding: var(--main-padding);
+        > p.selected-class {
+            padding: var(--header-selected-class-padding);
+            color: var(--secondary-color);
+            background-color: var(--accent-color-75);
+            border-radius: var(--main-border-radius);
+            margin: var(--header-selected-class-margin);
+            white-space: nowrap;
         }
     }
 
