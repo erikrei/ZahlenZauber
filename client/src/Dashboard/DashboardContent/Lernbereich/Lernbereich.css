@@ -147,4 +147,11 @@ main.learning-section {
             }
         }
     }
+
+    > div.no-class-error {
+        display: flex;
+        align-items: center;
+        padding: var(--main-padding);
+        gap: var(--main-gap);
+    }
 }

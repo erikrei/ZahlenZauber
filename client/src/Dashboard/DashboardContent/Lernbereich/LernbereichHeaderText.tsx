@@ -8,9 +8,11 @@ export default function LernBereichHeaderText({
   description,
 }: LernBereichHeaderTextProps) {
   return (
-    <div className="learning-section-header-text">
-      <h1>{headline}</h1>
-      <p>{description}</p>
+    <div className="learning-section-header">
+      <div className="learning-section-header-text">
+        <h1>{headline}</h1>
+        <p>{description}</p>
+      </div>
     </div>
   );
 }

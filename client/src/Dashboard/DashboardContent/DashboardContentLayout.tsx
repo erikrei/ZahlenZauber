@@ -2,6 +2,8 @@ import { Navigate, useParams } from "react-router";
 
 import { dashboardCategoriesData } from "../../data/dashboard.data";
 
+import SettingsContextProvider from "../../context/settings.context";
+
 export default function DashboardContentLayout() {
   const { category } = useParams();
 
@@ -11,5 +13,7 @@ export default function DashboardContentLayout() {
 
   if (!currentCategory) return <Navigate to="/dashboard" />;
 
-  return currentCategory.element;
+  return (
+    <SettingsContextProvider>{currentCategory.element}</SettingsContextProvider>
+  );
 }

@@ -8,6 +8,7 @@ import { TiMortarBoard, TiThListOutline } from "react-icons/ti";
 import Uebersicht from "../Dashboard/DashboardContent/Profil/Uebersicht/Uebersicht";
 import Lernen from "../Dashboard/DashboardContent/Lernbereich/Lernen/Lernen";
 import Lektionen from "../Dashboard/DashboardContent/Lernbereich/Lektionen/Lektionen";
+import Einstellungen from "../Dashboard/DashboardContent/Anderes/Einstellungen/Einstellungen";
 
 export type DashboardSidebarSection = {
   section: string;
@@ -103,6 +104,6 @@ export const dashboardCategoriesData: DashboardCategory[] = [
   },
   {
     url: "einstellungen",
-    element: <></>,
+    element: <Einstellungen />,
   },
 ];

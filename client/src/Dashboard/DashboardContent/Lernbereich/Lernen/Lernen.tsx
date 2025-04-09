@@ -1,32 +1,17 @@
-import { useState } from "react";
-
 import "../Lernbereich.css";
 
-import {
-  LearningCategory,
-  learningExercisesData,
-} from "../../../../data/lernen.data";
-import LernenCategory from "./LernenCategory";
-import LernenHeader from "./LernenHeader";
+import LernenUebungen from "./LernenUebungen";
+import LernBereichHeaderText from "../LernbereichHeaderText";
 
 export default function Lernen() {
-  const [selectedClass, setSelectedClass] = useState<number>(1);
-
-  const classCategories: LearningCategory[] | undefined =
-    learningExercisesData.find(
-      (exercises) => exercises.class === selectedClass
-    )?.categories;
- 
-  if (!classCategories) return null;
-
   return (
     <main className="learning-section">
-      <LernenHeader selectedClass={selectedClass} setSelectedClass={setSelectedClass} />
-      <div className="learning-exercises-container">
-        {classCategories.map((_category) => (
-          <LernenCategory key={_category.name} category={_category} />
-        ))}
-      </div>
+      <LernBereichHeaderText
+        headline="Lernen"
+        description="In diesem Bereich werden die je nach Klasse ausgewählten Übungen
+        angezeigt, die auf Wunsch durchgeführt werden können."
+      />
+      <LernenUebungen />
     </main>
   );
 }
