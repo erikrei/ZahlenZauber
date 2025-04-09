@@ -1,0 +1,28 @@
+main.settings {
+    > div.settings-header {
+        padding: var(--main-padding);
+        border-bottom: var(--main-border-width) solid var(--accent-color-75);
+    }
+
+    > div.settings-container {
+        display: flex;
+        flex-direction: column;
+        padding: var(--main-padding);
+
+        > article.settings-class {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            > div.settings-class-text {
+                > h2 {
+                    color: var(--secondary-color);
+                }
+
+                > p {
+                    color: var(--accent-color-35);
+                }
+            }
+        }
+    }
+}

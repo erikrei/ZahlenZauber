@@ -36,4 +36,18 @@
             }
         }
     }
+
+    a.link-btn, button.link-btn {
+        display: flex;
+        align-items: center;
+        padding: var(--main-padding);
+        background-color: var(--accent-color-95);
+        gap: var(--main-gap);
+        color: var(--secondary-color);
+        border-radius: var(--main-border-radius);
+
+        &:hover {
+            background-color: var(--accent-color-85);
+        }
+    }
 }
