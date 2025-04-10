@@ -1,10 +1,10 @@
+import { useSettingsContext } from "../../../../context/settings.context";
 import { lessonsData } from "../../../../data/lektionen.data";
 import LernbereichNotFound from "../LernbereichNotFound";
 import Lektion from "./Lektion";
 
 export default function LektionenListe() {
-  // Erstmals nur für 1. Klasse
-  const selectedClass = 1;
+  const { selectedClass } = useSettingsContext(); 
 
   const lessons = lessonsData.find(
     (lessonOverview) => lessonOverview.class === selectedClass
