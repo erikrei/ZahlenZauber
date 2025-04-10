@@ -53,7 +53,7 @@ export const dashboardSectionData: DashboardSidebarSection[] = [
         category: "Statistik",
         urlPath: "statistik",
         iconElement: <IoStatsChartOutline />,
-        disabled: false,
+        disabled: true,
       },
     ],
   },
@@ -64,7 +64,7 @@ export const dashboardSectionData: DashboardSidebarSection[] = [
         category: "Multiplayer",
         urlPath: "multiplayer",
         iconElement: <HiOutlineUserGroup />,
-        disabled: false,
+        disabled: true,
       },
       {
         category: "Einstellungen",
