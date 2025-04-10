@@ -131,19 +131,19 @@ export const learningExercisesData: LearningExercises[] = [
           "Geometrie ist die Mathematik von Formen wie Kreise, Quadrate oder Dreiecke. Du lernst dabei, wie groß sie sind, wie sie aussehen und wie sie zusammenpassen oder sich verändern können.",
         exercises: [
           {
-            name: "Figuren zeichen",
+            name: "Formen zeichen",
             description:
               "In dieser Übung lernst du Formen nach angegebener Größe zu zeichnen.",
           },
           {
-            name: "Figuren spiegeln",
+            name: "Formen spiegeln",
             description:
               "In dieser Übung lernst du angegebene Formen zu spiegeln. Spiegelung von Formen bedeutet, dass eine Form so aussieht, als würde sie sich in einem Spiegel zeigen.",
           },
         ],
       },
       {
-        name: "Längen, Gewichte und Zeiten",
+        name: "Maßeinheiten",
         description:
           "Längen sagen uns, wie lang etwas ist. Gewichte zeigen, wie schwer etwas ist, und Zeiten sagen, wie lange etwas dauert.",
         exercises: [
