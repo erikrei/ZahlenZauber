@@ -1,0 +1,105 @@
+:root {
+    --auth-border-color: var(--accent-color-85);
+    --auth-container-max-width: 64rem; /* 64 * 16 = 1024 px*/
+    --nav-link-padding: var(--main-padding) var(--main-padding-lg);
+}
+
+div.auth-container {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--auth-container-max-width);
+    margin: auto;
+    background-color: var(--accent-color-95);
+    border: var(--main-border-width) solid var(--auth-border-color);
+
+    > header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--main-padding);
+        color: var(--secondary-color);
+        border-bottom: var(--main-border-width) solid var(--auth-border-color);
+
+        > nav {
+            display: flex;
+            gap: var(--main-gap);
+
+            > a {
+                padding: var(--nav-link-padding);
+                color: white;
+                border-radius: var(--main-border-radius);
+
+                &.login {
+                    background-color: var(--secondary-color);
+
+                    &:hover {
+                        background-color: var(--secondary-color-light);
+                    }
+                }
+
+                &.register {
+                    background-color: var(--primary-color);
+                }
+            }
+        }
+    }
+
+    > main.auth-content {
+        padding: var(--main-padding);
+
+        > h2 {
+            margin-bottom: var(--main-gap);
+        }
+
+        > form.auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--main-gap);
+
+            > div.auth-input-container {
+                display: flex;
+                flex-direction: column;
+                gap: var(--main-gap-sm);
+
+                > label {
+                    display: flex;
+                    flex-direction: column;
+                    /* color: var(--accent-color-35); */
+                }
+
+                > input[type="text"] {
+                    font-size: var(--main-font-size);
+                    padding: var(--main-padding);
+                }
+            }
+
+            > button[type="submit"] {
+                border: none;
+                color: white;
+                padding: var(--main-padding);
+                border-radius: var(--main-border-radius);
+                font-size: var(--main-font-size);
+
+                &.form-submit-login {
+                    background-color: var(--secondary-color);
+
+                    &:hover {
+                        background-color: var(--secondary-color-light);
+                    }
+                }
+
+                &.form-submit-register {
+                    background-color: var(--primary-color);
+
+                    &:hover {
+                        background-color: var(--primary-color-light);
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
