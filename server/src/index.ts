@@ -1,11 +1,13 @@
 import express from 'express';
 import 'dotenv/config';
+import cors from 'cors';
 import { connection } from './config/db_connection';
 import routes from './routes/route';
 
-const app = express();
+export const app = express();
 const port = process.env.SERVER_PORT;
 
+app.use(cors());
 app.use(express.json());
 app.use('/', routes);
 

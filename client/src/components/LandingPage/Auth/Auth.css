@@ -64,10 +64,9 @@ div.auth-container {
                 > label {
                     display: flex;
                     flex-direction: column;
-                    /* color: var(--accent-color-35); */
                 }
 
-                > input[type="text"] {
+                > input {
                     font-size: var(--main-font-size);
                     padding: var(--main-padding);
                 }

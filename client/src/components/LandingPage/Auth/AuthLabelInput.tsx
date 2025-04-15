@@ -2,6 +2,7 @@ type AuthLabelInputProps = {
   label: string;
   inputName: string;
   inputValue: string;
+  inputType: string;
   onChange: (targetValue: string) => void;
 };
 
@@ -9,6 +10,7 @@ export default function AuthLabelInput({
   label,
   inputName,
   inputValue,
+  inputType,
   onChange,
 }: AuthLabelInputProps) {
   return (
@@ -19,7 +21,7 @@ export default function AuthLabelInput({
       <input
         name={inputName}
         id={inputName}
-        type="text"
+        type={inputType}
         onChange={(e) => onChange(e.target.value)}
         value={inputValue}
       />

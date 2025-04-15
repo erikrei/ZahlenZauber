@@ -1,5 +1,5 @@
 import { IoSettingsOutline } from "react-icons/io5";
-import ButtonLink from "../../../../shared/ButtonLink";
+import ButtonLink from "../../../shared/ButtonLink";
 
 export default function LernbereichClassSelection() {
   return (

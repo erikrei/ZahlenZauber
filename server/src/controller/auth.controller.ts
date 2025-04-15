@@ -8,7 +8,7 @@ const postLogin = (req: Request, res: Response) => {
     authQuery.loginUser(username, password).then(result => {
         res.send(result)
     }).catch(err => {
-        res.send({
+        res.status(400).send({
             error: err
         })
     })
@@ -18,7 +18,7 @@ const postRegister = (req: Request, res: Response) => {
     const { username, email, password }: RegisterUser = req.body;
     authQuery.registerUser(username, email, password)
         .then(result => res.send(result))
-        .catch(err => res.send({
+        .catch(err => res.status(400).send({
             error: err
         }));
 }

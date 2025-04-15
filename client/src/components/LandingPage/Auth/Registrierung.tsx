@@ -19,18 +19,21 @@ export default function Registrierung() {
         <AuthLabelInput
           label="Benutzername"
           inputName="username"
+          inputType="text"
           inputValue={username}
           onChange={setUsername}
         />
         <AuthLabelInput
           label="Email-Adresse"
           inputName="email-address"
+          inputType="text"
           inputValue={email}
           onChange={setEmail}
         />
         <AuthLabelInput
           label="Passwort"
           inputName="password"
+          inputType="password"
           inputValue={password}
           onChange={setPassword}
         />
