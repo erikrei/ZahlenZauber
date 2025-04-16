@@ -3,7 +3,7 @@ import LernenCategory from "./LernenCategory";
 import {
   LearningCategory,
   learningExercisesData,
-} from "../../../../../data/lernen.data";
+} from "../../../../../util/data/lernen.data";
 import LernbereichNotFound from "../LernbereichNotFound";
 import { useSettingsContext } from "../../../../../context/settings.context";
 import LernbereichClassSelection from "../LernbereichClassSelection";

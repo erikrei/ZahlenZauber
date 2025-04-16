@@ -1,5 +1,5 @@
 import { UebersichtCompletedExercise } from "./UebersichtCompletedExercise";
-import { OverviewCompletedExercise } from "../../../data/uebersicht.data";
+import { OverviewCompletedExercise } from "../../../../../../util/data/uebersicht.data";
 
 type UebersichtCompletedExerciseProps = {
   exercises: OverviewCompletedExercise[];

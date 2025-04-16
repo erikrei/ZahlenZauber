@@ -1,4 +1,4 @@
-import { OverviewMilestone } from "../../../../../../data/uebersicht.data";
+import { OverviewMilestone } from "../../../../../../util/data/uebersicht.data";
 import randomItemsFromArray from "../../../../../../util/randomItemsFromArray";
 import UebersichtMilestone from "./UebersichtMilestone";
 

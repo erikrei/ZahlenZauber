@@ -1,7 +1,7 @@
 import UebersichtLevelHeader from "./UebersichtLevelHeader";
 
-import { overviewLevelData } from "../../../../../../data/uebersicht.data";
-import { overviewExperienceExerciseData } from "../../../../../../data/uebersicht.data";
+import { overviewLevelData } from "../../../../../../util/data/uebersicht.data";
+import { overviewExperienceExerciseData } from "../../../../../../util/data/uebersicht.data";
 
 import UebersichtLevelProgress from "./UebersichtLevelProgress";
 import UebersichtExperiences from "./UebersichtExperiences";

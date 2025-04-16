@@ -1,5 +1,5 @@
 import { useSettingsContext } from "../../../../../context/settings.context";
-import { lessonsData } from "../../../../../data/lektionen.data";
+import { lessonsData } from "../../../../../util/data/lektionen.data";
 import LernbereichNotFound from "../LernbereichNotFound";
 import Lektion from "./Lektion";
 

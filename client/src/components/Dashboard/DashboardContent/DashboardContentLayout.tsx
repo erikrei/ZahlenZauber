@@ -1,6 +1,6 @@
 import { Navigate, useParams } from "react-router";
 
-import { dashboardCategoriesData } from "../../../data/dashboard.data";
+import { dashboardCategoriesData } from "../../../util/data/dashboard.data";
 
 import SettingsContextProvider from "../../../context/settings.context";
 
