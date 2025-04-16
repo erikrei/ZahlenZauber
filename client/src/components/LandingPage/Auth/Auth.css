@@ -2,6 +2,7 @@
     --auth-border-color: var(--accent-color-85);
     --auth-container-max-width: 64rem; /* 64 * 16 = 1024 px*/
     --nav-link-padding: var(--main-padding) var(--main-padding-lg);
+    --error-icon-size: 1.5rem;
 }
 
 div.auth-container {
@@ -69,6 +70,29 @@ div.auth-container {
                 > input {
                     font-size: var(--main-font-size);
                     padding: var(--main-padding);
+                }
+            }
+
+            > div.auth-msg-container {
+                display: flex;
+                align-items: center;
+                padding: var(--main-padding);
+                border-radius: var(--main-border-radius);
+                gap: var(--main-gap);
+
+                &.success {
+                    border: var(--main-border-width) solid var(--primary-color);
+                    color: var(--primary-color);
+                }
+
+                &.error {
+                    border: var(--main-border-width) solid var(--main-red);
+                    color: var(--main-red);
+                }
+
+                > svg {
+                    width: var(--error-icon-size);
+                    height: var(--error-icon-size);
                 }
             }
 

@@ -1,21 +1,42 @@
 import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
 import AuthLabelInput from "./AuthLabelInput";
+import { registerUser } from "../../../util/api/auth.api";
+import { checkRegisterInput } from "../../../util/checkAuthInput";
+import AuthErrorClient from "./AuthErrorClient";
+import AuthErrorServer from "./AuthErrorServer";
+import RegisterSuccess from "./RegisterSuccess";
 
 export default function Registrierung() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [registerErrMsg, setRegisterErrMsg] = useState("");
 
-  function registerUser() {
-    console.log(
-      `Benutzername: ${username}, Email: ${email}, Passwort: ${password}`
+  const registerMutation = useMutation({
+    mutationKey: ["register", username],
+    mutationFn: registerUser,
+  });
+
+  function onRegister(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const [isValid, errorMessage] = checkRegisterInput(
+      username,
+      email,
+      password
     );
+    if (registerErrMsg.length) setRegisterErrMsg("");
+    if (isValid) {
+      registerMutation.mutate({ username, email, password });
+    } else {
+      setRegisterErrMsg(errorMessage);
+    }
   }
 
   return (
     <>
       <h2>Registrierung</h2>
-      <form action={registerUser} className="auth-form">
+      <form onSubmit={onRegister} className="auth-form">
         <AuthLabelInput
           label="Benutzername"
           inputName="username"
@@ -37,7 +58,19 @@ export default function Registrierung() {
           inputValue={password}
           onChange={setPassword}
         />
-        <button type="submit" className="form-submit-register">Registrieren</button>
+        <RegisterSuccess showSuccess={registerMutation.isSuccess} />
+        <AuthErrorClient errorMessage={registerErrMsg} />
+        <AuthErrorServer
+          isError={registerMutation.isError}
+          error={registerMutation.error}
+        />
+        <button
+          type="submit"
+          className="form-submit-register"
+          disabled={registerMutation.isPending}
+        >
+          Registrieren
+        </button>
       </form>
     </>
   );
