@@ -24,6 +24,7 @@ export default function AuthLabelInput({
         type={inputType}
         onChange={(e) => onChange(e.target.value)}
         value={inputValue}
+        autoComplete="off"
       />
     </div>
   );
