@@ -7,6 +7,13 @@ const truncateUsers = (req: Request, res: Response) => {
         .catch(err => res.send(err))
 }
 
+const createUsers = (req: Request, res: Response) => {
+    devQuery.createUsersTable()
+        .then(result => res.send(result))
+        .catch(err => res.send(err))
+}
+
 export default {
-    truncateUsers
+    truncateUsers,
+    createUsers
 }
