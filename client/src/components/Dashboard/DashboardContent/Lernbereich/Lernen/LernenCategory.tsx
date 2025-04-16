@@ -1,4 +1,4 @@
-import { LearningCategory } from "../../../../../data/lernen.data";
+import { LearningCategory } from "../../../../../util/data/lernen.data";
 import LernenExercise from "./LernenExercise";
 
 type LernenCategoryProps = {

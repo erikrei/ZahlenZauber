@@ -5,10 +5,10 @@ import { HiOutlineUserGroup } from "react-icons/hi";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { TiMortarBoard, TiThListOutline } from "react-icons/ti";
 
-import Uebersicht from "../components/Dashboard/DashboardContent/Profil/Uebersicht/Uebersicht";
-import Lernen from "../components/Dashboard/DashboardContent/Lernbereich/Lernen/Lernen";
-import Lektionen from "../components/Dashboard/DashboardContent/Lernbereich/Lektionen/Lektionen";
-import Einstellungen from "../components/Dashboard/DashboardContent/Anderes/Einstellungen/Einstellungen";
+import Uebersicht from "../../components/Dashboard/DashboardContent/Profil/Uebersicht/Uebersicht";
+import Lernen from "../../components/Dashboard/DashboardContent/Lernbereich/Lernen/Lernen";
+import Lektionen from "../../components/Dashboard/DashboardContent/Lernbereich/Lektionen/Lektionen";
+import Einstellungen from "../../components/Dashboard/DashboardContent/Anderes/Einstellungen/Einstellungen";
 
 export type DashboardSidebarSection = {
   section: string;

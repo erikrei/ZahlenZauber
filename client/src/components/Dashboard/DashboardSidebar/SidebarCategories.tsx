@@ -1,4 +1,4 @@
-import { DashboardSidebarCategory } from "../../../data/dashboard.data";
+import { DashboardSidebarCategory } from "../../../util/data/dashboard.data";
 import SidebarCategory from "./SidebarCategory";
 
 type SidebarSectionProps = {

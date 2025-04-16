@@ -1,4 +1,4 @@
-import { dashboardSectionData } from "../../../data/dashboard.data";
+import { dashboardSectionData } from "../../../util/data/dashboard.data";
 import SectionCategories from "./SidebarCategories";
 
 export default function SectionList() {

@@ -1,4 +1,4 @@
-import { Lesson } from "../../../../../data/lektionen.data";
+import { Lesson } from "../../../../../util/data/lektionen.data";
 
 type LektionProps = {
   lesson: Lesson;

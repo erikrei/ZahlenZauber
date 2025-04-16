@@ -1,4 +1,4 @@
-import { LearningCategoryExercise } from "../../../../../data/lernen.data";
+import { LearningCategoryExercise } from "../../../../../util/data/lernen.data";
 
 type LernenExerciseProps = {
   exercise: LearningCategoryExercise;
