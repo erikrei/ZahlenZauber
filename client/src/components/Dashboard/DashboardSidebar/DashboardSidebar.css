@@ -137,7 +137,7 @@ aside {
             > div.categories-container {
                 flex-direction: row;
 
-                > a {
+                > a, div.sidebar-category {
                     flex: 1;
                     justify-content: center;
                 }
