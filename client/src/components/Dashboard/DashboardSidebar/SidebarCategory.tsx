@@ -8,19 +8,24 @@ type SidebarCategoryProps = {
   urlPath: string;
 };
 
-export default function SidebarCategory({ name, isDisabled, iconElement, urlPath }: SidebarCategoryProps) {
+export default function SidebarCategory({
+  name,
+  isDisabled,
+  iconElement,
+  urlPath,
+}: SidebarCategoryProps) {
   if (isDisabled)
     return (
-      <p className="sidebar-category disabled">
+      <div className="sidebar-category disabled">
         {iconElement}
-        {name}
-      </p>
+        <p className="sidebar-category-name">{name}</p>
+      </div>
     );
 
   return (
     <NavLink to={urlPath} className="sidebar-category">
       {iconElement}
-      {name}
+      <p className="sidebar-category-name">{name}</p>
     </NavLink>
   );
 }
